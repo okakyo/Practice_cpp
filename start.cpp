@@ -6,7 +6,6 @@ void Rocket::Accel(int volume){
 	fuel-=volume;
 	velocity+=volume;
 	height+=velocity;
-
 }
 
 void Rocket::Repeat() const{
@@ -18,13 +17,24 @@ void Rocket::Repeat() const{
 	cout<<endl;
 }
 
-
 int main(){
 	Rocket rocket;
-	for(int i=0;i<3;i++){
-		rocket.Repeat();
-		rocket.Accel(10);
+	int volume;
+	rocket.Repeat();
+	cout<<"噴射する燃料の量を入力してください。：";	
+	cin>>volume;
+	rocket.Accel(volume);
+	rocket.Repeat();
+	if (rocket.GetFuel()>0){
+
+	cout<<"まだ燃料があります。"<<endl;
+	cout<<"もう一度噴射する燃料の量を入力してください。："<<endl;
+	cin>>volume;
+	rocket.Accel(volume);
+	rocket.Repeat();
 	
-	}	
+	}
+	
+	cout<<"終了"<<endl;
 return 0;
 }

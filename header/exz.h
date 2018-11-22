@@ -7,11 +7,11 @@ class Rocket{
 	int fuel;
 	int velocity;
 	int height;
-
-	public :
+public :
 	Rocket();
+	Rocket(int fuel, int velocity, int height);
 	void Accel(int volume);
 	void Repeat() const;
-
+	int GetFuel() const{return fuel;}
 };
 #endif

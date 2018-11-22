@@ -1,5 +1,6 @@
 #include<iostream>
-
+#ifndef __EXZ__H__IDENTIFIED__
+#define __EXZ__H__IDENTIFIED__
 using namespace std;
 
 class Rocket{
@@ -13,3 +14,4 @@ class Rocket{
 	void Repeat() const;
 
 };
+#endif
