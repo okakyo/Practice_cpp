@@ -13,5 +13,11 @@ public :
 	void Accel(int volume);
 	void Repeat() const;
 	int GetFuel() const{return fuel;}
+private:
+	int fuel;
+	int velocity;
+	int height;
+	
+
 };
 #endif
