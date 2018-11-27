@@ -5,6 +5,7 @@
 #include<string>
 
 using namespace std;
+
 class Sample{
 	string name="É~ÉP";
 public:
@@ -13,6 +14,9 @@ public:
 	void SetName(string n){name=n;}
 	void Meow() const;
 };
+
+
+
 
 
 

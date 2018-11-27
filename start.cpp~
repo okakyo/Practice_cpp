@@ -2,6 +2,21 @@
 
 Rocket::Rocket():fuel(100),velocity(0),height(0){}
 
+void Rocket::SaveData() const{
+
+	ofstream f("savedata.txt");
+	if (!f){
+	cerr<<"ファイルオープンに失敗"<<endl;
+	return;
+	}
+
+	f<<fuel<<endl;
+	f<<velocity<<endl;
+	f<<height<<endl;
+	cout<<"データをセーブしました。"<<endl;
+
+}
+
 void Rocket::Accel(int volume){
 	fuel-=volume;
 	velocity+=volume;
@@ -16,21 +31,21 @@ void Rocket::Repeat() const{
 	cout<<"高度"<<height<<endl;
 	cout<<endl;
 }
+Rocket::~Rocket(){
+	cout<<"Rocketは破棄されました。"<<endl;
+}
 
 int main(){
 	Rocket rocket;
 	int volume;
 	rocket.Repeat();
-	cout<<"噴射する燃料の量を入力してください。：";	
-	cin>>volume;
-	rocket.Accel(volume);
-	rocket.Repeat();
-	if (rocket.GetFuel()>0){
-	cout<<"まだ燃料があります。"<<endl;
-	cout<<"もう一度噴射する燃料の量を入力してください。："<<endl;
-	cin>>volume;
-	rocket.Accel(volume);
-	rocket.Repeat();
+	while (rocket.GetFuel()){
+
+		cout<<"噴射する燃料の量を入力してください。：";	
+		cin>>volume;
+		rocket.Accel(volume);
+		rocket.Repeat();	
+		rocket.SaveData();
 	}
 	
 	cout<<"終了"<<endl;

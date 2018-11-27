@@ -6,7 +6,7 @@
 
 using namespace std;
 class Sample{
-	string name;
+	string name="É~ÉP";
 public:
 	Sample()=default;
 	Sample(string n):name(n){}

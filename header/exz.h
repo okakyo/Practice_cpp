@@ -1,6 +1,9 @@
-#include<iostream>
 #ifndef __EXZ__H__IDENTIFIED__
 #define __EXZ__H__IDENTIFIED__
+
+#include<iostream>
+#include<fstream>
+
 using namespace std;
 
 class Rocket{
@@ -10,13 +13,12 @@ class Rocket{
 public :
 	Rocket();
 	Rocket(int fuel, int velocity, int height);
+	~Rocket();
 	void Accel(int volume);
 	void Repeat() const;
 	int GetFuel() const{return fuel;}
-private:
-	int fuel;
-	int velocity;
-	int height;
+	void SaveData() const;
+
 	
 
 };
