@@ -1,0 +1,13 @@
+#include"header/practice.h"
+
+using namespace std;
+
+int main(){
+	Sample cat;
+	Sample *pcat=&cat;
+	int x;
+	int *px=&x;
+	cout<<"xのアドレス："<<px<<endl;
+	cout<<"catのアドレス："<<pcat<<endl;
+return 0;
+}
