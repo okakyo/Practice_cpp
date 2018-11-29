@@ -5,10 +5,9 @@ using namespace std;
 int main(){
 	int x=100;
 	int *px=&x;
-	Sample cat;
-	Sample *pcat=&cat;
-	cout<<"xのアドレス："<<px<<endl;
-	pcat-> SetName("タマ");
-	pcat->Meow();
+	x=200;
+	cout<<"xの内容："<<*px<<endl;
+	x=400;
+	cout<<"xの内容："<<x<<endl;
 return 0;
 }

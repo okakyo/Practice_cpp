@@ -2,12 +2,12 @@
 
 using namespace std;
 
-int main(){
-	Sample cat;
-	Sample *pcat=&cat;
-	int x;
+int main()
+	int x=100;
 	int *px=&x;
-	cout<<"xのアドレス："<<px<<endl;
-	cout<<"catのアドレス："<<pcat<<endl;
+	x=200;
+	cout<<"xの内容："<<*px<<endl;
+	x=400;
+	cout<<"xの内容："<<x<<endl;
 return 0;
 }
