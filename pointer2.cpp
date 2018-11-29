@@ -1,5 +1,7 @@
 #include<iostream>
 
+//pointer ‚ÌŽg‚¢•û‚Ì“TŒ^“I‚È‚È—á
+
 using namespace std;
 
 void swap(int *x,int *y){
