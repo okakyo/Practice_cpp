@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string>
+
 
 using namespace std;
 
@@ -7,6 +9,7 @@ struct Point{
 	int y;
 
 } ;
+
 int main(){
 
 	Point pos={10,20};

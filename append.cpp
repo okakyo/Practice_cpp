@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 
+//\‘¢‘Ì‚Ì—ûK
 
 using namespace std;
 
