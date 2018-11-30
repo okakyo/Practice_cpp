@@ -2,7 +2,7 @@
 #include<string>
 
 using namespace std;
-typedef long long int ll;
+typedef long long ll;
 
 int main(){
 	cout<<"int型のサイズ："<<sizeof(int)<<endl;
