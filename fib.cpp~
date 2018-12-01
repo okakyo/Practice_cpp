@@ -1,0 +1,23 @@
+#include<iostream>
+
+using namespace std;
+
+int fib(int n){
+	int ans=1,a=0,b,i;
+	while(true){
+		if (n<ans)break;
+		b=a;
+		a=ans;
+		ans=a+b;
+		i++;
+	}
+return ans,i;
+}
+
+int main(){
+	int x;
+	cout<<"”Žš‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B";
+	cin>>x;
+	cout<<fib(x)<<endl;
+return 0;
+}
