@@ -2,6 +2,7 @@
 #include<cstdlib>
 #include<ctime>
 #include"devil.cpp"
+#include"player.cpp"
 
 using namespace std;
 
