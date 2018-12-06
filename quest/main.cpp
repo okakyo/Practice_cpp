@@ -1,7 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
-#include"header/game.hpp"
+#include"game.hpp"
 using namespace std;
 
 int main(){

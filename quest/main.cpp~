@@ -8,6 +8,6 @@ int main(){
 
 	Game game;
 	srand((unsigned) time (NULL));
-	game.play();
+	game.Play();
 	return 0;
 }

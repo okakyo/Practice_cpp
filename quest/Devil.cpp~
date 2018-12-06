@@ -1,5 +1,5 @@
 #include<iostream>
-#include"header/devil.h"
+#include"header/devil.hpp"
 
 
 using namespace std;
