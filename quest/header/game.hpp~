@@ -40,7 +40,7 @@ void Game::Play(){
 int Game::Attack_Player(){
 	ShowStatus();
 	if(player.InputCommand())
-		devil.Attacked(player.GetAtk(),player.GetHit());
+		devil.Attacked(player.GetAtk(),player.Gethit());
 	else return INVALID_COMMAND;
 	if(!devil.GetHP()){
 	Ending();

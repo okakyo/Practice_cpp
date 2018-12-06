@@ -1,26 +1,13 @@
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
-#include"devil.cpp"
-#include"player.cpp"
-
+#include"header/game.hpp"
 using namespace std;
 
 int main(){
 
-	int command,atk,hit;
-	Devil devil;
-	Player player;
+	Game game;
 	srand((unsigned) time (NULL));
-	while(true){
-		system("cls");
-		cout<<"プレイヤー　HP"<<player.GetHP()<<end;
-		cout<<"魔王　HP"<<devil.GetHP()<<end;
-		if (player.InputCommand()){
-			devil.Attacked(player.GetAtk(),player.GetHit());
-			system("pause");
-		}
-		if (!devil.GetHP()) break;
-	}
+	game.play();
 	return 0;
 }
