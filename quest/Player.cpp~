@@ -13,7 +13,7 @@ int Player::InputCommand(){
 
 	cout<<"1:ロングソ\ード：威力70、命中70%"<<endl;
 	cout<<"2:ダガー：威力50、命中90% "<<endl;
-	cout<<"2:ブリザド：威力80、命中75% MP 消費 50 "<<endl;
+	cout<<"3:ブリザド：威力80、命中75% MP 消費 50 "<<endl;
 	cout<<"======================================="<<endl;
 	cout<<"Input command:";
 	cin>>command;
@@ -24,8 +24,9 @@ int Player::InputCommand(){
 		       	atk=80;
 		       	hit=75; 
 		       	mp-=50;}
-		       else{ 
-			return 0;}
+		       else
+			return 0;
+		       break;
 		default:return 0;
 
 	}

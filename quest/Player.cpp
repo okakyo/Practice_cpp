@@ -5,7 +5,6 @@ using namespace std;
 
 int Player::InputCommand(){
 
-	int command;
 	cout<<"プレイヤーのターン"<<endl<<endl;
 	cout<<"======================================="<<endl;
 
@@ -16,19 +15,29 @@ int Player::InputCommand(){
 	cout<<"3:ブリザド：威力80、命中75% MP 消費 50 "<<endl;
 	cout<<"======================================="<<endl;
 	cout<<"Input command:";
-	cin>>command;
-	switch(command){
-		case 1:atk=70,hit=70 ;break;
-		case 2:atk=50,hit=90 ;break;
-		case 3:if(mp>=50){
-		       	atk=80;
-		       	hit=75; 
-		       	mp-=50;}
+	cin>>command.command;
+	switch(command.command){
+		case 1:command.atk=70,command.hit=70 ;break;
+		case 2:command.atk=50,command.hit=90 ;break;
+		case 3:if(status.mp>=50){
+		       	command.atk=80;
+		       	command.hit=75; 
+		       	status.mp-=50;}
 		       else
 			return 0;
 		       break;
 		default:return 0;
 
 	}
-	return command;
+	return command.command;
+}
+
+void Player::Attacked(const int atk,const int hit){
+	if((rand()%100+rand()%100/2)<=hit){
+		int damage=((status.hp-atk)<0)?status.hp:atk;
+		cout<<"Hit!! プレイヤーに"<<damage<<"のダメージ"<<endl;
+status.hp-=damage;
+	}
+	else cout<<"Miss!!"<<endl;
+	if(!status.hp) cout<<"プレイヤーは倒れた"<<endl;
 }

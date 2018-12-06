@@ -1,8 +1,8 @@
 #pragma once
 #include<iostream>
 #include<cstdlib>
-#include"header/player.h"
-#include"header/Devil.h"
+#include"player.cpp"
+#include"Devil.cpp"
 
 using namespace std;
 

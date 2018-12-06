@@ -1,0 +1,14 @@
+#pragma once
+
+class Player;
+class Devil;
+
+class Command{
+
+	friend class Player;
+	friend class Devil;
+	int command;
+	int atk;
+	int hit;
+	Command():command(0),atk(0),hit(0){}
+};
