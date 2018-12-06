@@ -3,16 +3,16 @@
 #include"command.h"
 
 class Devil{
-	Stautus status;
+	Status status;
 	Command command;
 
 public:
-	Devil():{status.hp=500;status.mp=300;}
+	Devil(){status.hp=500;status.mp=300;}
 	int InputCommand();
 	void Attacked(const int atk,const int hit);
-	int GetHP() const {return hp;}
-	int GetMP() const {return mp;}
-	int GetAtk() const {return atk;}
-	int GetHit() const {return hit;}
+	int GetHP() const {return status.hp;}
+	int GetMP() const {return status.mp;}
+	int GetAtk() const {return command.atk;}
+	int GetHit() const {return command.hit;}
 
 };
