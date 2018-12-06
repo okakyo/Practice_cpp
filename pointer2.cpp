@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include<string>
 //pointer ‚ÌŽg‚¢•û‚Ì“TŒ^“I‚È‚È—á
 
 using namespace std;
