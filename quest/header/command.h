@@ -2,7 +2,7 @@
 
 class Player;
 class Devil;
-
+class StrayCat;
 //friend class (クラス名):
 //private なメンバであっても、(クラス名)のクラスから自由にアクセスすることを許可するための命令。（重要）
 
@@ -10,6 +10,7 @@ class Command{
 
 	friend class Player;
 	friend class Devil;
+	friend class StrayCat;
 	int command;
 	int atk;
 	int hit;

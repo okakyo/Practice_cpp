@@ -9,5 +9,5 @@ class Status{
 	friend class Devil;
 	int hp;
 	int mp;
-	Status():hp(0),mp(){}
+	Status():hp(0),mp(0){}
 };

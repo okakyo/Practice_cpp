@@ -1,6 +1,6 @@
 #pragma once
-#include"Status.h"
-#include"Sommand.h"
+#include"status.h"
+#include"command.h"
 
 class Devil{
 	Status status;
