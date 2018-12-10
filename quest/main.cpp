@@ -5,8 +5,7 @@
 using namespace std;
 
 int main(){
-
-	Game game;
+	Game<StrayCat> game;
 	srand((unsigned) time (NULL));
 	game.Play();
 	return 0;

@@ -2,13 +2,14 @@
 #include<iostream>
 #include<cstdlib>
 #include"player.cpp"
-#include"Devil.cpp"
+#include"StrayCat.cpp"
 
 using namespace std;
 
+template<class Enemy>
 class Game{
 	Player player;
-	Devil devil;
+	Enemy enemy;
 public:
 	enum CheckCommand{
 		CONTINUE =0,
@@ -19,44 +20,45 @@ public:
 	Game();
 	void Play();
 	int Attack_Player();
-	int Attack_Devil();
+	int Attack_Enemy();
 	void ShowStatus();
 private:
 	void Ending(bool isPlayerWin);
 };
-
-Game::Game(){
-	cout<<"魔王が現れた！"<<endl<<endl;
+template <class Enemy>
+Game<Enemy>::Game(){
+	cout<<enemy.GetName()<<"が現れた！"<<endl<<endl;
 	system("pause");
 }
-
-void Game::Play(){
+template <class Enemy>
+void Game<Enemy>::Play(){
 	while(true){
 		system("cls");
 		if(Attack_Player()==BATTLE_END)
 			break;
 		system("cls");
-		if(Attack_Devil()==BATTLE_END)
+		if(Attack_Enemy()==BATTLE_END)
 			break;
 	}
 }
-
-int Game::Attack_Player(){
+template <class Enemy>
+int Game<Enemy>::Attack_Player(){
 	ShowStatus();
 	if(player.InputCommand())
-		devil.Attacked(player.GetAtk(),player.GetHit());
+		enemy.Attacked(player.GetAtk(),player.GetHit());
 	else return INVALID_COMMAND;
-	if(!devil.GetHP()){
+	if(!enemy.GetHP()){
 	Ending(true);
 	return BATTLE_END;
 	}	
 	system("pause");
 	return CONTINUE;
 }
-int Game::Attack_Devil(){
+template <class Enemy>
+int Game<Enemy>::Attack_Enemy(){
 	ShowStatus();
-	if(devil.InputCommand())
-		player.Attacked(devil.GetAtk(),devil.GetHit());
+	if(enemy.InputCommand())
+		player.Attacked(enemy.GetAtk(),enemy.GetHit());
 	else return INVALID_COMMAND;
 	if(!player.GetHP()){
 	Ending(false);
@@ -65,14 +67,18 @@ int Game::Attack_Devil(){
 	system("pause");
 	return CONTINUE;
 }
-
-void Game::ShowStatus(){
-
+template <class Enemy>
+void Game<Enemy>::ShowStatus(){
+	cout.width(20);
+	cout.setf(ios::left,ios::adjustfield);
 	cout<<"プレイヤー　HP"<<player.GetHP()<<"MP"<<player.GetMP()<<endl;
-	cout<<"魔王　HP"<<devil.GetHP()<<"MP"<<devil.GetMP()<<endl<<endl;
+	cout.width(20);
+	cout.setf(ios::left,ios::adjustfield);
+	cout<<enemy.GetName();
+	cout<<"HP"<<enemy.GetHP()<<"MP"<<enemy.GetMP()<<endl<<endl;
 }
-
-void Game::Ending(bool isPlayerWin){
+template<class Enemy>
+void Game<Enemy>::Ending(bool isPlayerWin){
 	if(isPlayerWin)	cout<<"プレイヤーの勝利！！"<<endl<<endl;
 	else cout<<"ゲームオーバー"<<endl<<endl;
 }
