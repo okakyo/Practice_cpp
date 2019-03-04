@@ -1,0 +1,15 @@
+#pragma once 
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+class SimpleCat{
+	string name;
+	public:
+		SimpleCat(){}
+		SimpleCat(string n):name(n){}
+		void SetName(string n){name=n;}
+		void Meow() const;
+};

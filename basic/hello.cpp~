@@ -1,0 +1,14 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main(){
+	string name;
+	double  age;
+
+	cout<<"StringŒ^‚ÍA"<<sizeof(name)<<endl;
+	cout<<"IntŒ^‚ÍA"<<sizeof(age)<<"Á”ï‚µ‚Ü‚·";
+
+return 0;
+}

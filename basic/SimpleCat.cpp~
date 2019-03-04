@@ -1,0 +1,16 @@
+#include"SimpleCat.h"
+
+void SimpleCat::Meow() const{
+
+	cout<<"にゃー！俺の名は"<<name<<"だ！"<<endl;
+}
+
+int main(){
+	SimpleCat tama;
+	SimpleCat marimo("まりも") //コンストラクタの定義法
+	tama.Meow();
+	marimo.Meow();
+	tama.SetName("タマ");
+	tama.Meow();
+return 0;
+}
